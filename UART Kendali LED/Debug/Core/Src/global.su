@@ -1,0 +1,3 @@
+global.c:15:6:led_operation	8	static
+global.c:34:6:led_default	4	static
+global.c:41:10:parsing_delimiter_string	32	static
