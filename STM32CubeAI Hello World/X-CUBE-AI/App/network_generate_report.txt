@@ -1,0 +1,56 @@
+Neural Network Tools for STM32 v1.2.0 (AI tools v5.0.0)
+Created date       : 2020-02-27 10:02:51
+
+Exec/report summary (generate dur=3.601s err=0)
+------------------------------------------------------------------------------------------------------------------------
+model file         : F:\AI\STM32 AI\Model\Tensorflowlite\sinemodel.tflite
+type               : tflite (tflite)
+c_name             : network
+compression        : None
+quantize           : None
+L2r error          : NOT EVALUATED
+workspace dir      : C:\Users\KANGUS~1\AppData\Local\Temp\mxAI_workspace394008286722000219531848545718359
+output dir         : C:\Users\Kang Usman\.stm32cubemx\stm32ai_output
+
+model_name         : sinemodel
+model_hash         : 796d7957dda312b8483aaa6ceb2d3c2c
+input              : input_0 [1 items, 4 B, ai_float, FLOAT32, (1,)]
+input (total)      : 4 B
+output             : dense_2 [1 items, 4 B, ai_float, FLOAT32, (1,)]
+output (total)     : 4 B
+params #           : 321 items (1.25 KiB)
+macc               : 320
+weights (ro)       : 1,284 (1.25 KiB) 
+activations (rw)   : 128 (128 B) 
+ram (total)        : 136 (136 B) = 128 + 4 + 4
+
+------------------------------------------------------------------------------------------------------------------------
+id  layer (type)        output shape      param #     connected to             macc           rom                
+------------------------------------------------------------------------------------------------------------------------
+0   input_0 (Input)     (1,)                                                                                     
+    dense_0 (Dense)     (16,)             32          input_0                  16             128                
+    nl_0 (Nonlinearity) (16,)                         dense_0                  16                                
+------------------------------------------------------------------------------------------------------------------------
+1   dense_1 (Dense)     (16,)             272         nl_0                     256            1,088              
+    nl_1 (Nonlinearity) (16,)                         dense_1                  16                                
+------------------------------------------------------------------------------------------------------------------------
+2   dense_2 (Dense)     (1,)              17          nl_1                     16             68                 
+------------------------------------------------------------------------------------------------------------------------
+sinemodel p=321(1.25 KBytes) macc=320 rom=1.25 KBytes ram=128 B io_ram=8 B
+
+ 
+Complexity per-layer - macc=320 rom=1,284
+------------------------------------------------------------------------------------------------------------------------
+id      layer (type)        macc                                    rom                                    
+------------------------------------------------------------------------------------------------------------------------
+0       dense_0 (Dense)     ||                                5.0%  ||||                             10.0% 
+0       nl_0 (Nonlinearity) ||                                5.0%  |                                 0.0% 
+1       dense_1 (Dense)     |||||||||||||||||||||||||||||||  80.0%  |||||||||||||||||||||||||||||||  84.7% 
+1       nl_1 (Nonlinearity) ||                                5.0%  |                                 0.0% 
+2       dense_2 (Dense)     ||                                5.0%  ||                                5.3% 
+------------------------------------------------------------------------------------------------------------------------
+
+
+Evaluation report (summary)
+--------------------------------------------------
+NOT EVALUATED
